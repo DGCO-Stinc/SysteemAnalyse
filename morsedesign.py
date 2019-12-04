@@ -1,4 +1,5 @@
 import tkinter as tk
+import morsebase
 
 def morse_base():
     alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ','0','1','2','3','4','5','6','7','8','9']
@@ -8,8 +9,9 @@ def morse_base():
         converted = morse[alphabet.index(char)]
         text4.delete('1.0', 'end')
         text4.insert(tk.INSERT, converted)
-    
 
+morse_base = morsebase.Converter()
+1
 root = tk.Tk()
 root.title("Morse")
 text1 = tk.Text(root, height=1, width=50)
