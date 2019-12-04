@@ -4,6 +4,5 @@ import morsebase
 
 converter = morsebase.Converter()
 
-text = input("word please\n>")
-converter.texttomorse(text)
-
+morse = input("Morse:\n")
+converter.morsetotext(morse)
