@@ -11,7 +11,7 @@ def morse_base():
         text4.insert(tk.INSERT, converted)
 
 morse_base = morsebase.Converter()
-1
+
 root = tk.Tk()
 root.title("Morse")
 text1 = tk.Text(root, height=1, width=50)
