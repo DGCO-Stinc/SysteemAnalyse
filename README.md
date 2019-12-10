@@ -14,9 +14,7 @@ The idea to make a morse code converter with a simple GUI.
 ### To be Added  
 
 + **Speech** - this includes text and morsecode.  
-+ **Possible Supported languages**  
-    `en`  
-    `nl`  
++ **Language Support** - `en` `nl`  
 
 More will be added later on. :)  
 
