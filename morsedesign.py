@@ -38,8 +38,6 @@ text3.config(state="disabled")
 text1.pack()
 #Input
 userinput.pack()
-#Speaker image
-label.pack()
 #Output text
 text3.pack()
 #Output
