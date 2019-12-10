@@ -37,8 +37,6 @@ text3.config(state="disabled")
 text1.pack()
 #Input
 text2.pack()
-#Speaker image
-label.pack()
 #Output text
 text3.pack()
 #Output
@@ -46,5 +44,7 @@ text4.pack()
 #Buttons
 b1.pack(side=tk.LEFT)
 b2.pack(side=tk.LEFT)
+#Speaker image
+label.pack(side=tk.RIGHT)
 
 root.mainloop()
