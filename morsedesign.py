@@ -47,5 +47,7 @@ text4.pack()
 #Buttons
 b1.pack(side=tk.LEFT)
 b2.pack(side=tk.LEFT)
+#Speaker image
+label.pack(side=tk.RIGHT)
 
 root.mainloop()
