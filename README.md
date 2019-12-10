@@ -3,7 +3,7 @@
 ### Contributors:  
 > Prototyping / Main Structure and Logic - **Joran**  
 > Main Logic and Debugger - **Geordi**  
-> Markdown and Prototyping - **Dave**  
+> Markdown, Prototyping and Debugging  - **Dave**  
 
 ### Functionalities 
 The idea to make a morse code converter with a simple GUI.  
@@ -14,6 +14,10 @@ The idea to make a morse code converter with a simple GUI.
 ### To be Added  
 
 + **Speech** - this includes text and morsecode.  
++ **Possible Supported languages**  
+    `en`  
+    `nl`  
 
-More will be added later.  
+More will be added later on. :)  
+
 
