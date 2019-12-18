@@ -5,8 +5,11 @@ class Tts:
     
     def __init__(self):
         self.name = "henk"
+        self.count = 0
 
     def speakit(self, text):
+        
         v = gTTS(text=text, lang="nl", slow=False)
-        v.save("name.mp3")
-        playsound("name.mp3")
+        v.save(f"name{self.count%10}.mp3")
+        playsound(f"name{self.count%10}.mp3")
+        self.count += 1

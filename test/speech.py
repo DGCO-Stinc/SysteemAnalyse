@@ -4,6 +4,11 @@ import speechcode
 
 tts = speechcode.Tts()
 
-text = input("zegeensiets\n")
 
-tts.speakit(text)
+
+while(True):
+    text = input("zegeensiets\n")
+    if text=="e":
+        break
+    else:
+        tts.speakit(text)
