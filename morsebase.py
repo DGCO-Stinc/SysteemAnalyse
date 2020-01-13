@@ -14,6 +14,7 @@ class Converter:
         converted = ""
         for char in text:
             converted += self.morse[self.alphabet.index(char)]
+            converted += "/"
         return converted
 
     def morsetotext(self, morse):
