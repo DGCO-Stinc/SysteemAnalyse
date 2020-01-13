@@ -10,7 +10,7 @@ def morse_base():
     uinput = userinput.get("1.0", 'end-1c')
     text4.delete('1.0', 'end')
     for char in uinput:
-        converted = morse[alphabet.index(char)]
+        converted = morse[alphabet.index(char).lower]
         text4.insert(tk.INSERT, converted)
 
 #morse_base = morsebase.Converter()
