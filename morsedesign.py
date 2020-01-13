@@ -2,16 +2,27 @@ import tkinter as tk
 from tkinter import Menu
 import morsebase
 
-def morse_base():
-    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ','0','1','2','3','4','5','6','7','8','9', '\n']
-    morse = ['.-','-...','-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..','/','-----','.----','..---','...--','....-','.....','-....','--...','---..','----.', '\n']   
+# #def morse_base():
+#     alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ','0','1','2','3','4','5','6','7','8','9', '\n']
+#     morse = ['.-','-...','-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..','/','-----','.----','..---','...--','....-','.....','-....','--...','---..','----.', '\n']
+#     uinput = userinput.get("1.0", 'end-1c')
+#     text4.delete('1.0', 'end')
+#     for char in uinput:
+#         converted = morse[alphabet.index(char).lower]
+#         text4.insert(tk.INSERT, converted)
+
+
+morse_base = morsebase.Converter()
+
+def morsetotext():
+    uinput = userinput.get("1.0",'end-1c')
+    text4.delete('1.0','end')
+    text4.insert(tk.INSERT,morse_base.morsetotext(uinput))
+def texttomorse():
     uinput = userinput.get("1.0", 'end-1c')
     text4.delete('1.0', 'end')
-    for char in uinput:
-        converted = morse[alphabet.index(char).lower]
-        text4.insert(tk.INSERT, converted)
+    text4.insert(tk.INSERT, morse_base.texttomorse(uinput))
 
-#morse_base = morsebase.Converter()
 
 #Preload
 root = tk.Tk()
@@ -34,8 +45,8 @@ userinput = tk.Text(root, width=50, height=10)
 text3 = tk.Text(root, height=1, width=50)
 text4 = tk.Text(root, height=10, width=50)
 #Buttons
-b1 = tk.Button(root, text="To Morse", command=morse_base, bg="#dddddd", pady="4px", width="10")
-b2 = tk.Button(root, text="To Text", bg="#dddddd", pady="4px", width="10")
+b1 = tk.Button(root, text="To Morse", command=texttomorse, bg="#dddddd", pady="4px", width="10")
+b2 = tk.Button(root, text="To Text", command=morsetotext, bg="#dddddd", pady="4px", width="10")
 #Speech Button
 speaker = tk.PhotoImage(file="img/speaker_icon.png")
 label = tk.Label(image=speaker)
