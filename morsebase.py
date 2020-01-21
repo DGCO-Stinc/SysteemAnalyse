@@ -3,18 +3,23 @@ class Converter:
     def __init__(self):
         # Alphabetical and morse code arrays
         self.alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-                         't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '\n']
+                         't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '', '\n']
         self.morse = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..', '.---', '-.-', '.-..', '--', '-.',
                       '---', '--.', '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-', '-.--', '--..', '/',
-                      '-----', '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.', '\n']
+                      '-----', '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.', ' ', '', '\n']
         self.name = "morty"
 
     def texttomorse(self, text):
         text = text.lower()
         converted = ""
         for char in text:
-            converted += self.morse[self.alphabet.index(char)]
-            converted += "/"
+            if char == " ":
+                converted += self.morse[self.alphabet.index(char)]
+                converted += "/"
+            else:
+                converted += self.morse[self.alphabet.index(char)]
+                converted += " "
+
         return converted
 
     def morsetotext(self, morse):
@@ -24,7 +29,10 @@ class Converter:
         index = 0
         for char in morse:
 
-            if char == ' ' or char == '/':
+            if char == '/':
+                converted += " "
+                buffer = ""
+            elif char == ' ':
                 converted += self.alphabet[self.morse.index(buffer)]
                 buffer = ""
             elif char == "." or char == "-":
